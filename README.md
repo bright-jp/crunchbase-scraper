@@ -1,11 +1,11 @@
 # Crunchbase Scraper
 
-[![Bright Data Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.com/products/web-scraper/crunchbase)
+[![Bright Data Promo](https://github.com/luminati-io/LinkedIn-Scraper/raw/main/Proxies%20and%20scrapers%20GitHub%20bonus%20banner.png)](https://brightdata.jp/products/web-scraper/crunchbase)
 
-This repository provides two approaches for extracting business intelligence data from Crunchbase:
+このリポジトリでは、Crunchbase からビジネスインテリジェンスデータを抽出するための 2 つのアプローチを提供しています。
 
-1. **Basic Scraper Script:** Lightweight, browser-automated scraper for limited data collection.
-2. **Bright Data Crunchbase Scraper API:** A robust, scalable, and maintenance-free solution for high-volume and reliable data extraction.
+1. **基本スクレイパースクリプト:** 軽量でブラウザ自動化型のスクレイパーで、限定的なデータ収集向けです。
+2. **Bright Data Crunchbase Scraper API:** 大量かつ信頼性の高いデータ抽出のための、堅牢でスケーラブル、かつメンテナンス不要のソリューションです。
 
 ## Table of Contents
 - [Basic Crunchbase Scraper](#1-basic-crunchbase-scraper)
@@ -28,48 +28,48 @@ This repository provides two approaches for extracting business intelligence dat
 
 ## 1. Basic Crunchbase Scraper
 
-A Python implementation demonstrating how to extract fundamental company data from Crunchbase profiles.
+Crunchbase のプロフィールから基本的な企業データを抽出する方法を示す Python 実装です。
 
 <img width="800" alt="Bright Data Platform Interface" src="https://github.com/luminati-io/crunchbase-scraper/blob/main/images/440236063-03b5a4c6-ba43-4595-bab8-96161740e197.png" />
 
 ### Features
 
-This script collects publicly available data points, including:
+このスクリプトは、以下を含む公開データポイントを収集します。
 
-- Company fundamentals (description, website, founding date)
-- Contact information (email, phone)
-- Operational metrics (status, employee count, location)
-- Leadership information (founders)
-- Industry classifications
+- 企業の基本情報（説明、Web サイト、設立日）
+- 連絡先情報（メール、電話）
+- 運用指標（ステータス、従業員数、所在地）
+- リーダーシップ情報（創業者）
+- 業界分類
 
 ### Prerequisites
 
-* Python 3.x installed
-* SeleniumBase library: `pip install seleniumbase`
+* Python 3.x のインストール
+* SeleniumBase ライブラリ: `pip install seleniumbase`
 
 ### Implementation
 
-1. **Get the Code:** Access the script file here: [free-crunchbase-scraper/crunchbase-scraper.py](https://github.com/luminati-io/crunchbase-scraper/blob/main/free-crunchbase-scraper/crunchbase-scraper.py)
-2. **Set Target URL:** Open the script and modify the `target_url` variable to the specific Crunchbase company profile you wish to scrape.
+1. **コードの取得:** スクリプトファイルはこちらから参照できます: [free-crunchbase-scraper/crunchbase-scraper.py](https://github.com/luminati-io/crunchbase-scraper/blob/main/free-crunchbase-scraper/crunchbase-scraper.py)
+2. **対象 URL の設定:** スクリプトを開き、`target_url` 変数をスクレイピングしたい Crunchbase 企業プロフィールの URL に変更します。
     
     ```python
     target_url = "https://www.crunchbase.com/organization/your-target-company"
     ```
     
-3. **Run the Script:** Execute the script from your terminal: `python crunchbase-scraper.py`
+3. **スクリプトの実行:** ターミナルからスクリプトを実行します: `python crunchbase-scraper.py`
 
 
-💡 **Note:** This script uses [SeleniumBase](https://seleniumbase.io/), an advanced Selenium wrapper with built-in tools for handling CAPTCHAs and other browser challenges. Learn more: [Web Scraping with SeleniumBase](https://brightdata.com/blog/web-data/web-scraping-with-seleniumbase) and [SeleniumBase with Proxies](https://brightdata.com/blog/proxy-101/seleniumbase-with-proxies).
+💡 **Note:** このスクリプトは [SeleniumBase](https://seleniumbase.io/) を使用しています。これは Selenium の高度なラッパーで、CAPTCHA やその他のブラウザ上の課題に対応するためのツールが組み込まれています。詳細はこちらをご覧ください: [Web Scraping with SeleniumBase](https://brightdata.jp/blog/web-data/web-scraping-with-seleniumbase) および [SeleniumBase with Proxies](https://brightdata.jp/blog/proxy-101/seleniumbase-with-proxies)。
 
 
 ### Sample Output
 
-The script extracts structured data in the following format:
+スクリプトは以下の形式で構造化データを抽出します。
 
 ```jsonc
 {
   "description": "Bright Data offers a platform for ethical web data collection and analysis.",
-  "website_url": "[https://brightdata.com](https://brightdata.com/)",
+  "website_url": "[https://brightdata.jp](https://brightdata.jp/)",
   "founding_date": "2018-07-01",
   "email": "[sales@brightdata.com](mailto:sales@brightdata.com)",
   "phone": "(888) 538-9204",
@@ -90,54 +90,54 @@ The script extracts structured data in the following format:
 
 ### Significant Limitations & Challenges
 
-This approach encounters significant [web scraping challenges](https://brightdata.com/blog/web-data/web-scraping-challenges) that make it unsuitable for production-scale data collection:
+このアプローチは、重大な [Webスクレイピングの課題](https://brightdata.jp/blog/web-data/web-scraping-challenges) に直面し、本番規模のデータ収集には不向きです。
 
-- **IP Blocking & Rate Limiting:** Crunchbase actively monitors and limits requests from individual IP addresses. Your IP will likely be blocked quickly after some scraping attempts.
-- **Sophisticated Anti-Bot Measures:** Crunchbase employs advanced security, including CAPTCHAs (like [Cloudflare Turnstile](https://brightdata.com/products/web-unlocker/captcha-solver/cloudflare-turnstile)) and behavioral analysis, specifically designed to detect and block automated scripts.
+- **IP ブロッキングとレート制限:** Crunchbase は個別 IPアドレス からのリクエストを積極的に監視し、制限しています。スクレイピングを数回試みるだけで、IP がすぐにブロックされる可能性が高いです。
+- **高度なアンチボット対策:** Crunchbase は、CAPTCHA（[Cloudflare Turnstile](https://brightdata.jp/products/web-unlocker/captcha-solver/cloudflare-turnstile) など）や行動分析を含む高度なセキュリティを採用しており、自動化スクリプトの検知とブロックを目的として設計されています。
 
   <img width="800" alt="Crunchbase CAPTCHA Challenge" src="https://github.com/luminati-io/crunchbase-scraper/blob/main/images/440239044-44cb5a79-e943-454b-9354-28b78ef67b57.png" />
 
-- **Dynamic Website Structure:** Crunchbase frequently updates its website layout and code. Any change can break the script, requiring constant, time-consuming maintenance.
-- **Scalability Issues:** This method cannot scale to handle multiple URLs efficiently or process large volumes of data.
-- **Maintenance Overhead:** You are responsible for managing infrastructure, handling blocks, updating the script, and ensuring compliance.
+- **動的な Web サイト構造:** Crunchbase は Web サイトのレイアウトやコードを頻繁に更新します。変更が入るたびにスクリプトが動かなくなる可能性があり、継続的で時間のかかるメンテナンスが必要になります。
+- **スケーラビリティの問題:** この方法では、複数 URL を効率的に処理したり、大量データを扱ったりする規模へ拡張できません。
+- **メンテナンス負荷:** インフラ管理、ブロック対応、スクリプト更新、コンプライアンス確保はすべてお客様側の責任となります。
 
 
 ## 2. Bright Data Crunchbase Scraper API
-The [Bright Data Crunchbase Scraper API](https://brightdata.com/products/web-scraper/crunchbase) provides a robust, scalable, and hassle-free way to extract comprehensive data from Crunchbase without dealing with the complexities of scraping.
+[Bright Data Crunchbase Scraper API](https://brightdata.jp/products/web-scraper/crunchbase) は、スクレイピングの複雑さに対処することなく、Crunchbase から包括的なデータを抽出できる、堅牢でスケーラブル、かつ手間のかからない方法を提供します。
 
 ### Key Benefits
 
-- **Bypasses Technical Challenges:** Automatically handles IP blocks, CAPTCHAs, and rate limits using advanced proxy rotation and web unlocking technology.
-- **Enterprise Scalability:** Designed for high-volume data collection.
-- **High Reliability:** Ensures consistent data delivery with enterprise-grade uptime.
-- **Developer-Friendly:** Simple API integration eliminates complex scraper development and maintenance.
-- **Structured Data Format:** Delivers clean, normalized data ready for analysis.
-- **Regulatory Compliance:** Adheres to data privacy regulations, including GDPR and CCPA.
-- **Flexible Pricing:** Pay-as-you-go model based on successful data delivery.
-- **Dedicated Support:** Access 24/7 expert technical support.
-- **Implementation Options:** Use the API programmatically or through the [No-Code Scraper](https://brightdata.com/products/web-scraper/no-code) interface.
+- **技術的課題を回避:** 高度なプロキシローテーションと Web unlocking 技術により、IP ブロック、CAPTCHA、レート制限を自動的に処理します。
+- **エンタープライズ級のスケーラビリティ:** 大量データ収集向けに設計されています。
+- **高い信頼性:** エンタープライズ級の稼働率で安定したデータ配信を保証します。
+- **開発者フレンドリー:** シンプルな API 統合により、複雑なスクレイパー開発とメンテナンスが不要になります。
+- **構造化データ形式:** 分析にすぐ使える、クリーンで正規化されたデータを提供します。
+- **規制遵守:** GDPR や CCPA を含むデータプライバシー規制に準拠します。
+- **柔軟な料金体系:** データ配信成功に基づく従量課金モデルです。
+- **専任サポート:** 24/7 の専門技術サポートを利用できます。
+- **実装オプション:** API をプログラムから利用するか、[No-Code Scraper](https://brightdata.jp/products/web-scraper/no-code) インターフェースから利用できます。
 
 ### Getting Started
 
-1. **Create Account:** Sign up for a [Bright Data account](https://brightdata.com/) *(New users receive $5 credits after adding a payment method)*.
-2. **Generate API Token:** Obtain your unique [API key](https://docs.brightdata.com/general/account/api-token) from your dashboard.
-3. **Implementation Guide:** For detailed configuration steps for both API methods and No-Code interface, see:
+1. **アカウント作成:** [Bright Data アカウント](https://brightdata.jp/) にサインアップします *(新規ユーザーは支払い方法を追加すると $5 クレジットを受け取れます)*。
+2. **API トークン生成:** ダッシュボードから固有の [API key](https://docs.brightdata.com/general/account/api-token) を取得します。
+3. **実装ガイド:** 2 つの API メソッドと No-Code インターフェースの両方について、詳細な設定手順はこちらをご覧ください:
 [setup-bright-data-crunchbase-scraper.md](https://github.com/luminati-io/crunchbase-scraper/blob/main/setup-bright-data-crunchbase-scraper.md)
 
 
 ### API Methods
 
-The API offers two primary data collection approaches:
+この API は、主に 2 つのデータ収集アプローチを提供します。
 
 ### A. Collect Crunchbase Data by URL
 
-Retrieves comprehensive profile information for specific Crunchbase company URLs.
+特定の Crunchbase 企業 URL に対して包括的なプロフィール情報を取得します。
 
 **Input Parameters:**
 
 | Parameter | Required | Description |
 | --- | --- | --- |
-| `url` | Yes | The full Crunchbase company URL. |
+| `url` | Yes | Crunchbase の企業 URL 全体です。 |
 
 **Example Request (Python):**
 
@@ -153,9 +153,9 @@ config = {
 # ... rest of the script uses this config
 ```
 
-- Replace `"YOUR_API_TOKEN"` with your actual Bright Data API token.
-- Modify the `organizations` list with your target Crunchbase URLs.
-- See the full runnable script: [crunchbase-scraper-api/crunchbase-profile-fetcher.py](https://github.com/luminati-io/crunchbase-scraper/blob/main/crunchbase-scraper-api/crunchbase-profile-fetcher.py)
+- `"YOUR_API_TOKEN"` を実際の Bright Data API トークンに置き換えてください。
+- `organizations` リストを対象の Crunchbase URL に変更してください。
+- 実行可能な完全なスクリプトはこちら: [crunchbase-scraper-api/crunchbase-profile-fetcher.py](https://github.com/luminati-io/crunchbase-scraper/blob/main/crunchbase-scraper-api/crunchbase-profile-fetcher.py)
 
 **Example Request (cURL):**
 
@@ -170,13 +170,13 @@ curl -X POST \
 
 **Sample Output Snippet:**
 
-The API returns comprehensive, structured data. Below is a small fraction of the available fields for a single company:
+API は包括的で構造化されたデータを返します。以下は、単一企業に対して利用可能なフィールドのごく一部です。
 
 ```jsonc
 {
   "companyName": "Bright Data",
   "legalName": "Bright Data",
-  "website": "https://brightdata.com",
+  "website": "https://brightdata.jp",
   "description": "Offers a platform for ethical web data collection and analysis...",
   "foundedDate": "2014-01-01",
   "location": {"city": "New York", "state": "New York", "country": "United States"},
@@ -198,11 +198,11 @@ The API returns comprehensive, structured data. Below is a small fraction of the
 }
 ```
 
-View complete sample response: [crunchbase-data/crunchbase-company-profiles.json](https://github.com/luminati-io/crunchbase-scraper/blob/main/crunchbase-data/crunchbase-company-profiles.json)
+完全なサンプルレスポンスはこちら: [crunchbase-data/crunchbase-company-profiles.json](https://github.com/luminati-io/crunchbase-scraper/blob/main/crunchbase-data/crunchbase-company-profiles.json)
 
 ### B. Discover Crunchbase Data by Keyword
 
-Identifies companies associated with specific keywords or industries (e.g., "AI", "Venture Capital", "SaaS").
+特定のキーワードまたは業界（例: "AI"、"Venture Capital"、"SaaS"）に関連する企業を特定します。
 
 <img width="800" alt="Discover by Keyword Interface Example" src="https://github.com/luminati-io/crunchbase-scraper/blob/main/images/440271152-56e59e94-19fa-4977-84a0-4b70c794cb20.png" />
 
@@ -210,7 +210,7 @@ Identifies companies associated with specific keywords or industries (e.g., "AI"
 
 | Parameter | Required | Description |
 | --- | --- | --- |
-| `keyword` | Yes | The keyword(s) to search for related companies. |
+| `keyword` | Yes | 関連企業を検索するためのキーワードです。 |
 
 **Example Request (Python):**
 
@@ -228,9 +228,9 @@ config = {
 # ... (script uses this config to make the API call)
 ```
 
-- Replace `"YOUR_API_TOKEN"`.
-- Modify the `keywords` list.
-- See the full runnable script: [`crunchbase-scraper-api/crunchbase-keyword-search.py`](https://github.com/luminati-io/crunchbase-scraper/blob/main/crunchbase-scraper-api/crunchbase-keyword-search.py)
+- `"YOUR_API_TOKEN"` を置き換えてください。
+- `keywords` リストを変更してください。
+- 実行可能な完全なスクリプトはこちら: [`crunchbase-scraper-api/crunchbase-keyword-search.py`](https://github.com/luminati-io/crunchbase-scraper/blob/main/crunchbase-scraper-api/crunchbase-keyword-search.py)
 
 **Example Request (cURL):**
 
@@ -245,7 +245,7 @@ curl -X POST \
 
 **Sample Output Snippet:**
 
-The response includes data for *multiple* companies matching the keyword search. This shows the structure for one result:
+レスポンスには、キーワード検索に一致した *複数* 企業のデータが含まれます。以下は 1 件の結果における構造例です。
 
 ```jsonc
 {
@@ -272,22 +272,22 @@ The response includes data for *multiple* companies matching the keyword search.
 }
 ```
 
-View complete sample response: [crunchbase-data/crunchbase-keyword-results.json](https://github.com/luminati-io/crunchbase-scraper/blob/main/crunchbase-data/crunchbase-keyword-results.json)
+完全なサンプルレスポンスはこちら: [crunchbase-data/crunchbase-keyword-results.json](https://github.com/luminati-io/crunchbase-scraper/blob/main/crunchbase-data/crunchbase-keyword-results.json)
 
 ### API Configuration & Delivery Options
 
-Customize your data collection jobs using additional parameters within the API request:
+API リクエスト内の追加パラメータを使用して、データ収集ジョブをカスタマイズできます。
 
 | Parameter | Type | Description | Example |
 | --- | --- | --- | --- |
-| `limit` | `integer` | Sets the maximum number of results per input (URL or keyword). | `limit=50` |
-| `include_errors` | `boolean` | Includes detailed error information in the response if issues occur. | `include_errors=true` |
-| `format` | `enum` | Specifies the desired output format (`json`, `csv`, `ndjson`). | `format=csv` |
-| `notify` | `url` | Provides a webhook URL to receive notifications upon job completion. | `notify=https://...` |
+| `limit` | `integer` | 入力（URL または keyword）あたりの最大結果数を設定します。 | `limit=50` |
+| `include_errors` | `boolean` | 問題が発生した場合、レスポンスに詳細なエラー情報を含めます。 | `include_errors=true` |
+| `format` | `enum` | 希望する出力形式（`json`, `csv`, `ndjson`）を指定します。 | `format=csv` |
+| `notify` | `url` | ジョブ完了時の通知を受け取るための webhook URL を指定します。 | `notify=https://...` |
 
-Data can be delivered directly to your preferred [external storage](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview#via-deliver-to-external-storage%3A) or via a [webhook](https://docs.brightdata.com/scraping-automation/web-data-apis/web-scraper-api/overview#via-webhook%3A).
+データは、希望する [external storage](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview#via-deliver-to-external-storage%3A) へ直接配信するか、[webhook](https://docs.brightdata.com/scraping-automation/web-data-apis/web-scraper-api/overview#via-webhook%3A) 経由で配信できます。
 
-For comprehensive documentation on the Web Scraper API and triggering collections, see:
+Web Scraper API と収集トリガーに関する包括的なドキュメントは、以下をご覧ください。
 
 - [Bright Data Web Scraper API Documentation](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview)
 - [Trigger Collection API Reference](https://docs.brightdata.com/api-reference/web-scraper-api/trigger-a-collection)
@@ -296,30 +296,30 @@ For comprehensive documentation on the Web Scraper API and triggering collection
 
 ### No-Code Scraper Interface
 
-For users who prefer a visual, point-and-click approach, Bright Data also offers the [No-Code Scraper](https://brightdata.com/products/web-scraper/no-code). This interface allows you to configure and launch Crunchbase data collection tasks using the same powerful underlying infrastructure, without writing any code. See the [Setup Guide](https://github.com/luminati-io/crunchbase-scraper/blob/main/setup-bright-data-crunchbase-scraper.md) for guidance.
+視覚的なポイント＆クリック操作を好むユーザー向けに、Bright Data は [No-Code Scraper](https://brightdata.jp/products/web-scraper/no-code) も提供しています。このインターフェースでは、同じ強力な基盤インフラを使用して、コードを書かずに Crunchbase のデータ収集タスクを設定し、起動できます。ガイダンスについては [Setup Guide](https://github.com/luminati-io/crunchbase-scraper/blob/main/setup-bright-data-crunchbase-scraper.md) を参照してください。
 
 ## Alternative: Pre-Collected Crunchbase Datasets
 
-If you require immediate access to large amounts of structured Crunchbase data without running scraping jobs yourself, consider Bright Data's pre-collected [Crunchbase Datasets](https://brightdata.com/products/datasets/crunchbase).
+スクレイピングジョブを自分で実行せずに、構造化された Crunchbase データを大量にすぐ利用したい場合は、Bright Data の事前収集済み [Crunchbase Datasets](https://brightdata.jp/products/datasets/crunchbase) をご検討ください。
 
-- **Ready-to-Use:** Access validated and structured Crunchbase data instantly.
-- **Comprehensive Coverage:** Datasets include over 100 data points per company profile.
-- **Regular Updates:** Choose from various data freshness options (daily, weekly, monthly, or custom).
-- **Flexible Purchase Options:** Acquire the entire dataset or specific subsets tailored to your needs and budget.
-- **Easy Integration:** Integrate datasets seamlessly via API or direct download.
-- **Sample Data Available:** Request a sample to evaluate data quality and fit.
+- **すぐに利用可能:** 検証済みで構造化された Crunchbase データに即時アクセスできます。
+- **包括的なカバレッジ:** データセットには企業プロフィールあたり 100 以上のデータポイントが含まれます。
+- **定期更新:** データ鮮度のオプション（毎日、毎週、毎月、またはカスタム）を選択できます。
+- **柔軟な購入オプション:** データセット全体、またはニーズと予算に合わせた特定サブセットを取得できます。
+- **容易な統合:** API 連携または直接ダウンロードで、データセットをシームレスに統合できます。
+- **サンプルデータ提供:** データ品質と適合性を評価するためのサンプルをリクエストできます。
 
 
 ## Resources & Support
 
 - **Bright Data Documentation:**
-    - [Crunchbase Scraper API Product Page](https://brightdata.com/products/web-scraper/crunchbase)
+    - [Crunchbase Scraper API Product Page](https://brightdata.jp/products/web-scraper/crunchbase)
     - [Web Scraper API Documentation](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview)
     - [API Reference: Trigger Collection](https://docs.brightdata.com/api-reference/web-scraper-api/trigger-a-collection)
-    - [Datasets Product Page](https://brightdata.com/products/datasets)
+    - [Datasets Product Page](https://brightdata.jp/products/datasets)
     - [Getting Your API Token](https://docs.brightdata.com/general/account/api-token)
 - **Guides & Blog Posts:**
-    - [How to Scrape Crunchbase (Comprehensive Guide)](https://brightdata.com/blog/web-data/how-to-scrape-crunchbase)
-    - [Web Scraping Without Getting Blocked](https://brightdata.com/blog/web-data/web-scraping-without-getting-blocked)
+    - [How to Scrape Crunchbase (Comprehensive Guide)](https://brightdata.jp/blog/web-data/how-to-scrape-crunchbase)
+    - [Web Scraping Without Getting Blocked](https://brightdata.jp/blog/web-data/web-scraping-without-getting-blocked)
     - [Setup Guide for Bright Data Crunchbase Scraper (in this repo)](https://github.com/luminati-io/crunchbase-scraper/blob/main/setup-bright-data-crunchbase-scraper.md)
-- **Technical Support:** Contact the Bright Data support team 24/7 via your account dashboard or email at [support@brightdata.com](mailto:support@brightdata.com).
+- **Technical Support:** Bright Data のサポートチームへは、アカウントダッシュボードまたはメール [support@brightdata.com](mailto:support@brightdata.com) から 24/7 でお問い合わせいただけます。

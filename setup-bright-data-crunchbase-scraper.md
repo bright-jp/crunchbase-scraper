@@ -1,88 +1,88 @@
-# Setting Up the Bright Data Crunchbase Scraper
+# Bright Data Crunchbase Scraper のセットアップ
 
-This guide provides step-by-step instructions on how to set up and use the Bright Data Web Scraper for Crunchbase. You can leverage Bright Data's powerful infrastructure to collect data from Crunchbase profiles either programmatically via API or through a user-friendly no-code interface.
+本ガイドでは、Crunchbase 向けの Bright Data Web Scraper をセットアップして使用する方法を、手順に沿って説明します。Bright Data の強力なインフラストラクチャを活用して、API によるプログラム経由、またはユーザーフレンドリーなノーコードインターフェース経由で、Crunchbase プロフィールからデータを収集できます。
 
-**Prerequisites:**
+**前提条件:**
 
-* An active Bright Data account.
+* 有効な Bright Data アカウント。
 
-## Steps
+## 手順
 
-1.  **Log in to Bright Data:**
-    Access your Bright Data dashboard.
-2.  **Navigate to Web Scrapers Library:**
-    * Select the **Web Scrapers** tab in the left-hand menu.
-    * Choose the **Web Scrapers Library** sub-tab.
+1.  **Bright Data にログインします:**
+    Bright Data ダッシュボードにアクセスします。
+2.  **Web Scrapers Library に移動します:**
+    * 左側メニューで **Web Scrapers** タブを選択します。
+    * **Web Scrapers Library** サブタブを選択します。
 
     ![Bright Data Dashboard](https://github.com/user-attachments/assets/f680db57-a15a-4bd9-8dfc-f7cab5e3219b)
 
-3.  **Find the Crunchbase Scraper:**
-    * Use the search bar and type "crunchbase".
-    * Select the **crunchbase.com** scraper from the search results.
+3.  **Crunchbase Scraper を見つけます:**
+    * 検索バーを使用し、「crunchbase」と入力します。
+    * 検索結果から **crunchbase.com** スクレイパーを選択します。
 
     ![Search for Crunchbase Scraper](https://github.com/user-attachments/assets/faf6ef56-859c-4cd9-baef-ace81d6cfe1d)
 
-4.  **Choose Scraper Type:**
-    You'll see different scraper templates available for Crunchbase. This guide focuses on the **Collect by URL** option. Select it.
+4.  **Scraper タイプを選択します:**
+    Crunchbase 向けに複数のスクレイパーテンプレートが表示されます。本ガイドでは **Collect by URL** オプションに焦点を当てます。これを選択します。
 
     ![Select Collect by URL](https://github.com/user-attachments/assets/fc1cc4dc-b637-44db-b782-81a9be0cf92f)
 
-5.  **Select Interaction Method:**
-    Bright Data offers two ways to use the scraper:
-    * **Scraper APIs:** For programmatic integration into your applications.
-    * **No-code scraper:** For a user-interface-driven approach without writing code.
+5.  **操作方法を選択します:**
+    Bright Data では、スクレイパーを使用する方法が 2 つあります:
+    * **Scraper APIs:** アプリケーションへのプログラム統合向けです。
+    * **No-code scraper:** コードを書かずに、ユーザーインターフェース主導で進める方法です。
 
-    Choose the method that best suits your needs and select **Next**.
+    ニーズに最も合う方法を選択し、**Next** を選択します。
 
     ![Choose Scraper API or No-code](https://github.com/user-attachments/assets/3b9518a2-ce00-4e90-9f8b-44ff3be30d54)
 
-### Option A: Using the Scraper API
+### オプション A: Scraper API を使用する
 
-If you selected **Scraper APIs**, you'll be directed to the API configuration dashboard.
+**Scraper APIs** を選択した場合、API 設定ダッシュボードに移動します。
 
 ![Crunchbase Scraper API Dashboard](https://github.com/user-attachments/assets/63e80d6e-5c57-4f2e-8d3c-300baa5f43a1)
 
-**Configuration and Usage:**
+**設定と使用方法:**
 
 1.  **API Request Builder:**
-    * **Inputs:** Add the specific Crunchbase URLs you want to scrape.
-    * **Output Format:** Select the desired data format (JSON, CSV).
-    * **Data Delivery:** Configure how you want to receive the data:
-        * [Deliver to External Storage](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview#via-deliver-to-external-storage%3A) (e.g., Email, S3, Google Cloud Storage, SFTP).
-        * [Send to Webhook](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview#via-webhook%3A).
-    * **Notifications:** Set up URLs to be notified upon job completion or failure.
+    * **Inputs:** スクレイピングしたい特定の Crunchbase URL を追加します。
+    * **Output Format:** 目的のデータ形式（JSON、CSV）を選択します。
+    * **Data Delivery:** データの受け取り方法を設定します:
+        * [Deliver to External Storage](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview#via-deliver-to-external-storage%3A)（例: Email、S3、Google Cloud Storage、SFTP）。
+        * [Send to Webhook](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview#via-webhook%3A)。
+    * **Notifications:** ジョブの完了時または失敗時に通知を受け取るための URL を設定します。
 
-2.  **Running the Scraper:**
-    * As you adjust the settings, the request builder on the right side updates automatically.
-    * It provides a ready-to-use **cURL command** or code snippets in various programming languages (Python, Node.js, Java, C#, PHP, etc.).
-    * Copy the generated code and execute it from your terminal or integrate it into your application.
+2.  **スクレイパーの実行:**
+    * 設定を調整すると、右側のリクエストビルダーが自動的に更新されます。
+    * すぐに使える **cURL command**、または各種プログラミング言語（Python、Node.js、Java、C#、PHP など）のコードスニペットが提供されます。
+    * 生成されたコードをコピーし、ターミナルから実行するか、アプリケーションに統合します。
 
-3.  **Additional Features:**
-    * **Overview Tab:** General information about your API usage.
-    * **Management APIs Tab:** APIs to manage your scraper instances programmatically.
-    * **Logs Tab:** Detailed logs of your API requests and scraper runs.
+3.  **追加機能:**
+    * **Overview Tab:** API 使用状況に関する一般情報です。
+    * **Management APIs Tab:** スクレイパーインスタンスをプログラムで管理するための API です。
+    * **Logs Tab:** API リクエストおよびスクレイパー実行の詳細ログです。
 
-For a comprehensive overview of all settings, refer to the [Web Scraper API Documentation](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview).
+すべての設定に関する包括的な概要については、[Web Scraper API Documentation](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview) を参照してください。
 
-### Option B: Using the No-code Scraper
+### オプション B: No-code Scraper を使用する
 
-If you selected **No-code scraper**, you'll be presented with a user-friendly interface for configuration.
+**No-code scraper** を選択した場合、設定用のユーザーフレンドリーなインターフェースが表示されます。
 
-**Configuration and Execution:**
+**設定と実行:**
 
-1.  **Input URLs:**
-    * Paste multiple Crunchbase URLs directly into the input field (one URL per line).
-    * Alternatively, **upload a CSV file** containing a list of URLs.
+1.  **入力 URL:**
+    * 複数の Crunchbase URL を入力フィールドに直接貼り付けます（1 行につき 1 URL）。
+    * 代わりに、URL リストを含む **CSV file をアップロード** することもできます。
 
-2.  **Data Delivery Settings:**
-    * Configure how and where your data should be delivered (e.g., Email, cloud storage).
-    * Select the delivery settings toggle to configure. See [Data Delivery Settings](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview#via-deliver-to-external-storage%3A) for details.
+2.  **Data Delivery 設定:**
+    * データの配信方法と配信先（例: Email、クラウドストレージ）を設定します。
+    * 配信設定のトグルを選択して設定します。詳細は [Data Delivery Settings](https://docs.brightdata.com/scraping-automation/web-scraper-api/overview#via-deliver-to-external-storage%3A) を参照してください。
 
-3.  **Start and Download:**
-    * Once your inputs and delivery settings are configured, select the **Start collecting** button.
+3.  **開始とダウンロード:**
+    * 入力と配信設定が完了したら、**Start collecting** ボタンを選択します。
 
       ![No-code Scraper Input Configuration](https://github.com/user-attachments/assets/ee2b3bc4-9d42-45c2-99f2-e9387548ff26)
 
-    * When collection is complete, download the data in your preferred format (JSON, CSV, JSONL, or NDJSON).
+    * 収集が完了したら、希望する形式（JSON、CSV、JSONL、または NDJSON）でデータをダウンロードします。
     
       ![Download Data Options](https://github.com/user-attachments/assets/f3fd94f3-c995-46a5-aaaa-3f5ad3361e4c)
